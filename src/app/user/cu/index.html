@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button ng-if="$state.is('app.user.add')" type="button" class="btn btn-primary" ng-click="vm.add()" ng-disabled="form.$invalid || form.$pending || vm.isSubmitting">确定</button>
-                                <button ng-if="$state.is('app.user.edit')" type="button" class="btn btn-primary" ng-click="vm.edit()" ng-disabled="!form.$dirty || form.$invalid || vm.isSubmitting">确定</button>
+                                <button ng-if="$state.is('app.user.edit')" type="button" class="btn btn-primary" ng-click="vm.edit()" ng-disabled="!form.password.$modelValue || form.$invalid || vm.isSubmitting">确定</button>
                                 <a type="button" class="btn btn-default" ui-sref="app.user">取消</a>
                             </div>
                         </div>
