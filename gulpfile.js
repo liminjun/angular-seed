@@ -45,7 +45,7 @@ gulp.task('js', function () {
 gulp.task('html', function(){
 
     gulp.src(path.html,{base:'src'})
-        .pipe(minifyHtml())
+        .pipe(minifyHtml({ quotes: true }))
         .pipe(gulp.dest('dist'));
 });
 
