@@ -1,0 +1,1 @@
+angular.module("app.home").config(["$stateProvider",function(o){o.state("app.home",{url:"/",templateUrl:"app/home/index.html",resolve:{loadController:["$ocLazyLoad",function(o){o.load("app/home/home.controller.js")}]},controller:"HomeController"})}]);

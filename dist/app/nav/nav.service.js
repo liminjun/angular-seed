@@ -1,0 +1,1 @@
+angular.module("app.nav").factory("navService",["$http","AppConfig",function(n,t){return{getNav:function(){return n.get("api.test/nav.json").then(function(n){return n.data})}}}]);

@@ -1,0 +1,1 @@
+angular.module("app.user.cu").controller("UserAddController",["$scope","userService",function(s,e){var u=this;u.isSubmitting=!1,u.userName=null,u.realName=null,u.password=null,u.passwordConfirm=null,u.add=function(){u.isSubmitting=!0,e.add(u.userName,u.realName,u.password).success(function(e){u.isSubmitting=!1,e.success&&s.$state.go("^")})}}]);

@@ -1,0 +1,7 @@
+{
+  "data":{
+    "itemList": [{"roleId": 1, "roleName":"Admin", "status":1},{"roleId": 2, "roleName": "Read Only", "status":1}],
+    "pageCount": 1,
+    "totalCount": 2
+  }
+}

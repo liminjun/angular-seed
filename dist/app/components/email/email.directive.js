@@ -1,0 +1,1 @@
+angular.module("app.directives").directive("email",[function(){return{restrict:"A",require:"ngModel",link:function(e,i,a,r){r.$validators.email=function(e,i){return/^([a-z0-9A-Z]+[_-|\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\.)+[a-zA-Z]{2,}$/.test(e)}}}}]);

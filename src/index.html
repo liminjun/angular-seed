@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title ng-bind-template="{{title}} Angular Seed"></title>
+
+    <link ng-href="assets/theme/{{theme}}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/libs/angular/angular-csp.css" rel="stylesheet">
+
+    <link ng-href="assets/theme/{{theme}}/css/style.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="page" ui-view></div>
+    <div class="loading" ng-show="loading">loading</div>
+    <script src="assets/libs/jquery/jquery-2.1.4.min.js"></script>
+    <script src="assets/libs/angular/angular.min.js"></script>
+    <script src="assets/libs/angular/angular-route.min.js"></script>
+    <script src="assets/libs/angular/angular-sanitize.min.js"></script>
+    <script src="assets/libs/angular/angular-messages.min.js"></script>
+    <script src="assets/libs/angular-ui-router/angular-ui-router.min.js"></script>
+    <script src="assets/libs/angular-ui-bootstrap/ui-bootstrap-tpls-0.13.0.min.js"></script>
+    <script src="assets/libs/smart-table/smart-table.min.js"></script>
+    <script src="assets/libs/ocLazyLoad/ocLazyLoad.min.js"></script>
+
+    <!-- module, config, constant, run block -->
+    <script src="app/app.js"></script>
+
+    <!-- Common -->
+    <script src="app/components/menu/menu.directive.js"></script>
+
+    <script src="app/app.route.js"></script>
+    <script src="app/home/home.route.js"></script>
+    <script src="app/user/user.route.js"></script>
+    <script src="app/user/cu/user.cu.route.js"></script>
+    <script src="app/role/role.route.js"></script>
+</body>
+</html>

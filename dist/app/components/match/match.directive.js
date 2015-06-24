@@ -1,0 +1,1 @@
+angular.module("app.directives").directive("match",[function(){return{restrict:"A",require:"ngModel",link:function(t,n,e,r){function i(){return t.$eval(e.match)}r.$validators.match=function(t,n){return t==i()},t.$watch(i,function(){r.$$parseAndValidate()})}}}]);

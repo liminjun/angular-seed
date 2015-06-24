@@ -1,0 +1,6 @@
+<ui-select multiple ng-model="$.selected" ng-disabled="disabled" close-on-select="false" on-select="onSelect()" on-remove="onRemove()" class="w-md">
+    <ui-select-match placeholder="{{placeholder}}">{{$item.text}}</ui-select-match>
+    <ui-select-choices repeat="z.value as z in statusList">
+        <span>{{z.text}}</span>
+    </ui-select-choices>
+</ui-select>

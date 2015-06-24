@@ -1,0 +1,1 @@
+angular.module("app.user").config(["$stateProvider",function(e){e.state("app.user",{url:"/user",templateUrl:"app/user/index.html",resolve:{load:["$ocLazyLoad",function(e){return e.load(["app/user/user.controller.js","app/user/user.service.js"])}]}})}]);

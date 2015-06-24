@@ -1,0 +1,29 @@
+﻿[
+	{
+	  "title": "首页",
+	  "href": "app.home",
+	  "isNav":true
+	},
+	{
+		"title": "用户",
+		"href": "app.user",
+		"isNav":true,
+	  	"children":[
+		  {
+			"title": "新建用户",
+			"href": "app.user.add",
+			"isNav": true
+		  },
+		  {
+			"title": "编辑用户",
+			"href": "app.user.edit",
+			"isNav": false
+		  }
+		]
+	}, 
+	{
+		"title": "角色",
+		"href": "app.role",
+		"isNav":true
+	}
+]

@@ -1,0 +1,1 @@
+angular.module("app.filters").filter("status",[function(){return function(a){var e="";switch(a){case 1:e="启用";break;case 2:e="禁用";break;case-1:e="已删除"}return e}}]);

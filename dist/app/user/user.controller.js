@@ -1,0 +1,1 @@
+angular.module("app.user").controller("UserController",["$scope","userService",function(t,e){function a(a){t.searchObject;e.getUserList().success(function(e){t.isEmpty=0===e.data.itemList.length,a.pagination.numberOfPages=e.data.pageCount,t.userDataTable=e.data.itemList,t.totalCount=e.data.totalCount})}t.userDataTable=[],t.getUserList=a,t.totalCount=0,t.isEmpty=!1}]);

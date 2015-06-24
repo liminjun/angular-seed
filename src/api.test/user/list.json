@@ -1,0 +1,7 @@
+{
+  "data":{
+    "itemList": [{"userId": 1, "userName":"Arya","fullName":"Arya Stark", "status":1},{"userId": 2, "userName":"Brandon","fullName":"Brandon Stark","status":1},{"userId": 3, "userName":"Snow","fullName":"Jon Snow", "status":-1}],
+    "pageCount": 1,
+    "totalCount": 3
+  }
+}

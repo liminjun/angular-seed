@@ -1,0 +1,1 @@
+angular.module("app.user").factory("userService",["$http",function(t){return{getCurrentUser:function(){return t.get("api.test/user.json").then(function(t){return t.data})},getUserList:function(){return t({url:"api.test/user/list.json",method:"GET"})},getUserInfo:function(e){return t({url:"api.test/user/info.json",method:"GET"})}}}]);
