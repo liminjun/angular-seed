@@ -12,7 +12,7 @@ angular.module('app.user.cu').controller('UserAddController', ['$scope', 'userSe
     vm.add = function(){
         vm.isSubmitting = true;
 
-        userService.add(vm.userName, vm.realName, vm.password).success(function(response){
+        userService.add(vm.userName, vm.fullName, vm.password).success(function(response){
             vm.isSubmitting = false;
             if(response.success) {
                 $scope.$state.go('^');

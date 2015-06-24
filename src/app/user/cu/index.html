@@ -19,7 +19,7 @@
                             <label class="col-sm-2 control-label"><span class="flag-require" ng-show="$state.is('app.user.add')">*</span>姓名</label>
                             <div class="col-sm-10" ng-if="$state.is('app.user.add')">
                                 <input type="text" name="fullName" class="form-control" ng-model="vm.fullName" required>
-                                <div ng-messages="form.fullName.$error" ng-messages-include="app/shared/messages/real-name-error-messages.html" ng-show="form.fullName.$touched" class="error"></div>
+                                <div ng-messages="form.fullName.$error" ng-messages-include="app/shared/messages/full-name-error-messages.html" ng-show="form.fullName.$touched" class="error"></div>
                             </div>
                             <div class="col-sm-10" ng-if="$state.is('app.user.edit')">
                                 <div class="form-control-static" ng-bind="vm.fullName"></div>

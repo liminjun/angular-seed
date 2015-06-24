@@ -17,6 +17,34 @@
                 url: 'api.test/user/info.json',
                 method: 'GET'
             });
+        },
+        add: function (userName, fullName, password) {
+            var d = $q.defer();
+
+            $timeout(function () {
+                d.resolve();
+            }, 1000);
+
+            d.promise.success = function (fn) {
+                d.promise.then(function (data) {
+                    fn(data);
+                });
+            };
+
+            return d.promise;
+        },
+        edit: function (userId, userName, fullName, password) {
+            var d = $q.defer();
+            $timeout(function () {
+                d.resolve();
+            }, 500);
+
+            d.promise.success = function (fn) {
+                d.promise.then(function (data) {
+                    fn(data);
+                });
+            };
+            return d.promise;
         }
     };
 }]);
