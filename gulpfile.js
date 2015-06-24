@@ -18,7 +18,6 @@ var templateCache = require('gulp-angular-templatecache');
 //https://www.npmjs.com/package/gulp-rename
 var rename = require('gulp-rename');
 
-
 //npm install --save-dev gulp-jshint 
 var jshint = require('gulp-jshint');
 //npm install --save-dev jshint-stylish

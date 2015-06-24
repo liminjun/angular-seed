@@ -28,6 +28,9 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function (
                 return $ocLazyLoad.load('app/user/user.service.js').then(function(){
                     return $injector.get('userService').getCurrentUser();
                 });
+            }],
+            load: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load('app/components/menu/menu.directive.js');    
             }]
         },
         controller: ['$rootScope', '$scope', '$state', 'nav', 'currentUser', function ($rootScope, $scope, $state, nav, currentUser) {
