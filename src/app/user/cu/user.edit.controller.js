@@ -19,11 +19,9 @@ angular.module('app.user.cu').controller('UserEditController', ['$scope', '$stat
 
         userService.edit(vm.userId, vm.fullName, vm.password).success(function (response) {
             vm.isSubmitting = false;
-            if (response.success) {
-                $scope.$state.go('^');
-            } else {
-
-            }
+            
+            $scope.$state.go('^');
+            
         });
     };
 

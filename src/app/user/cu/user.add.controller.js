@@ -14,11 +14,9 @@ angular.module('app.user.cu').controller('UserAddController', ['$scope', 'userSe
 
         userService.add(vm.userName, vm.fullName, vm.password).success(function(response){
             vm.isSubmitting = false;
-            if(response.success) {
-                $scope.$state.go('^');
-            } else {
-
-            }
+            
+            $scope.$state.go('^');
+            
         });
     };
 }]);

@@ -1,4 +1,4 @@
-﻿angular.module('app.user').factory('userService', ['$http', function ($http) {
+﻿angular.module('app.user').factory('userService', ['$http', '$q', '$timeout', function ($http, $q, $timeout) {
 
     return {
         getCurrentUser: function () {
