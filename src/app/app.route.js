@@ -33,7 +33,10 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function (
                 });
             }],
             load: ['$ocLazyLoad', 'AppConfig', function ($ocLazyLoad, AppConfig) {                
-                return $ocLazyLoad.load('app/components/menu/menu.directive.js');
+                return $ocLazyLoad.load([
+                    'app/components/menu/menu.directive.js',
+                    'app/components/rcx/rcx.directive.js'
+                ]);
             }]
         },
         controller: ['$rootScope', '$scope', '$state', 'nav', 'currentUser', function ($rootScope, $scope, $state, nav, currentUser) {

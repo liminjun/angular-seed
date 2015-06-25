@@ -1,0 +1,35 @@
+﻿/* radio-button check-box 样式 */
+
+input[type="checkbox"] {
+	opacity: 0;
+    margin: 0;
+    position: relative;
+    z-index: 3;
+}
+
+input[type="checkbox"] + label {
+	display: inline-block;
+}
+
+input[type="checkbox"] + label:after {
+    position: absolute;
+	font-family: 'Glyphicons Halflings';
+	content: '\e157';
+	font-size: inherit;
+	margin: -12px 0 0 -12px;
+	color: @brand-primary;
+}
+
+
+input[type="checkbox"]:checked + label:after {
+	content: '\e067';
+}
+
+
+
+
+
+
+
+
+
