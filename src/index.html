@@ -1,18 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html ng-app="app">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title ng-bind-template="{{title}} Angular Seed"></title>
-
-    <link ng-href="assets/theme/{{theme}}/css/bootstrap.min.css" rel="stylesheet">
+    
     <link href="assets/libs/angular/angular-csp.css" rel="stylesheet">
 
-    <link ng-href="assets/theme/{{theme}}/css/style.min.css" rel="stylesheet">
+    <!--<link ng-href="assets/theme/{{AppConfig.theme}}/css/bootstrap.min.css" rel="stylesheet">
+    <link ng-href="assets/theme/{{AppConfig.theme}}/css/style.min.css" rel="stylesheet">-->
 </head>
 <body>
-    <div id="page" ui-view xyz=""></div>
-    <div class="loading" ng-show="loading">loading</div>
+    
+    <div id="page" ui-view></div>
+    <div class="loading" ng-show="loading" ng-cloak>加载中...</div>
 
     <script src="assets/libs/jquery/jquery-2.1.4.min.js"></script>
     <script src="assets/libs/angular/angular.min.js"></script>

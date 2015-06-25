@@ -18,6 +18,9 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function (
             //currentUser:['$userService', 'userService', function($userService, userService){
             //    return userService.getCurrentUser();
             //}]
+            loadCss:['$ocLazyLoad', 'AppConfig', function ($ocLazyLoad, AppConfig) {                
+                return $ocLazyLoad.load(['assets/theme/' + AppConfig.theme + '/css/bootstrap.min.css', 'assets/theme/' + AppConfig.theme + '/css/style.min.css']);
+            }],
             nav: ['$ocLazyLoad', '$injector', function($ocLazyLoad, $injector){
                 return $ocLazyLoad.load('app/nav/nav.service.js').then(function(){
                    return $injector.get('navService').getNav();
@@ -29,8 +32,8 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function (
                     return $injector.get('userService').getCurrentUser();
                 });
             }],
-            load: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load('app/components/menu/menu.directive.js');    
+            load: ['$ocLazyLoad', 'AppConfig', function ($ocLazyLoad, AppConfig) {                
+                return $ocLazyLoad.load('app/components/menu/menu.directive.js');
             }]
         },
         controller: ['$rootScope', '$scope', '$state', 'nav', 'currentUser', function ($rootScope, $scope, $state, nav, currentUser) {
@@ -38,8 +41,7 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function (
             $scope.nav = nav;
 
             $rootScope.currentUser = currentUser;
-
-            console.log(currentUser);
+            
 
             var navs = {};
             (function flatten(a, dest) {

@@ -31,11 +31,13 @@ angular.module('app', [
     'app.user',
     'app.role'])
     .config(['$httpProvider', function ($httpProvider) {
-
+        
         //$httpProvider.defaults.withCredentials = true;
+        
         $httpProvider.interceptors.push(['$q', '$location', '$rootScope', function ($q, $location, $rootScope) {
-
+            
             var pending = 0;
+            
             $rootScope.$watch(
                 function () {
                     return pending > 0;
@@ -80,7 +82,7 @@ angular.module('app', [
         Deleted: -1
     })
     .constant('AppConfig', {
-
+        theme: 'default',
         serverBaseUrl: 'http://localhost:63342/'
 
     })
@@ -91,6 +93,6 @@ angular.module('app', [
         $rootScope.$stateParams = $stateParams;
 
         $rootScope.AppConfig = AppConfig;
+                
 
-        $rootScope.theme = 'default';
     }]);
