@@ -1,0 +1,1 @@
+angular.module("app.directives").directive("rcBeautifier",function(){return{link:function(e,i,a){a.id||(a.id="rc-beautifier-"+(new Date).getTime()+"-"+Math.floor(100*Math.random()),i.attr("id",a.id)),$(i).addClass("rc-beautifier").after('<label for="'+a.id+'"></label>')}}});
