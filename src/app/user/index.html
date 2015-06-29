@@ -11,7 +11,7 @@
                     <table class="table table-striped table-hover" st-table="vm.userDataTable" st-pipe="vm.getUserList">
                         <thead>
                             <tr>
-                                <th><input type="checkbox" ng-model="vm.isAllSelected" ng-click="vm.toggleAll()" rcx /></th>
+                                <th><input type="checkbox" ng-model="vm.isAllSelected" ng-click="vm.toggleAll()" rc-beautifier /></th>
                                 <th>用户名</th>
                                 <th>姓名</th>
                                 <th>状态</th>
@@ -25,7 +25,7 @@
                         </tbody>
                         <tbody ng-show="!vm.isEmpty">
                             <tr ng-repeat="row in vm.userDataTable">
-                                <td><input type="checkbox" ng-model="row.selected" ng-click="vm.toggle()" rcx /></td>
+                                <td><input type="checkbox" ng-model="row.selected" ng-click="vm.toggle()" rc-beautifier /></td>
                                 <td>{{row.userName}}</td>
                                 <td>{{row.fullName}}</td>
                                 <td>{{row.status}}</td>

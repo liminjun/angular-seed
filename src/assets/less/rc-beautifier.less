@@ -1,17 +1,15 @@
 ﻿/* radio-button check-box 样式 */
 
-input[type="checkbox"] {
-	opacity: 0;
-    margin: 0;
-    position: relative;
-    z-index: 3;
+input[type="checkbox"].rc-beautifier {
+  visibility: hidden;
+  margin: 0;
 }
 
-input[type="checkbox"] + label {
+input[type="checkbox"].rc-beautifier + label {
 	display: inline-block;
 }
 
-input[type="checkbox"] + label:after {
+input[type="checkbox"].rc-beautifier + label:after {
     position: absolute;
 	font-family: 'Glyphicons Halflings';
 	content: '\e157';
@@ -21,7 +19,7 @@ input[type="checkbox"] + label:after {
 }
 
 
-input[type="checkbox"]:checked + label:after {
+input[type="checkbox"]:checked.rc-beautifier + label:after {
 	content: '\e067';
 }
 

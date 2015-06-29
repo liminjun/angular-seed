@@ -19,7 +19,10 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function (
             //    return userService.getCurrentUser();
             //}]
             loadCss:['$ocLazyLoad', 'AppConfig', function ($ocLazyLoad, AppConfig) {                
-                return $ocLazyLoad.load(['assets/theme/' + AppConfig.theme + '/css/bootstrap.min.css', 'assets/theme/' + AppConfig.theme + '/css/style.min.css']);
+                return $ocLazyLoad.load([
+                    'assets/theme/' + AppConfig.theme + '/css/bootstrap.min.css',
+                    'assets/theme/' + AppConfig.theme + '/css/style.min.css'
+                ]);
             }],
             nav: ['$ocLazyLoad', '$injector', function($ocLazyLoad, $injector){
                 return $ocLazyLoad.load('app/nav/nav.service.js').then(function(){
@@ -35,7 +38,7 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function (
             load: ['$ocLazyLoad', 'AppConfig', function ($ocLazyLoad, AppConfig) {                
                 return $ocLazyLoad.load([
                     'app/components/menu/menu.directive.js',
-                    'app/components/rcx/rcx.directive.js'
+                    'app/components/rc-beautifier/rc-beautifier.directive.js'
                 ]);
             }]
         },

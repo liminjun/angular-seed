@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <div><span onclick="this.parentNode.style.display='none';">关闭</span>
+    <!-- 获取投放请求处理JS，建议放置在head内 -->
+<script type="text/javascript">
+    (function (doc) {
+        var js = doc.createElement("script"),
+		fs = doc.getElementsByTagName("script")[0];
+        js.charset = "utf-8";
+        js.src = "http://js.miaozhen.com/mz_ad_serving.js";
+        fs.parentNode.insertBefore(js, fs);
+    })(document);
+</script>
+<!-- 秒针投放系统ID=1的广告位所在页面位置 -->
+<div id="MZADX_8422"></div>
+<!-- 获取具体广告位请求JS，建议放在body闭合结束前 -->
+<script type="text/javascript">
+    (function (win) {
+        var params = {};
+        params["l"] = [8422];		//Miaozhen ad placement id ARRAY
+        params["r"] = "1";		//version
+        params["_srv"] = "MZADX";
+        params["_baseurl"] = "http://s.x.cn.grpreach.com/ax";
+        __mz_rpq = win.__mz_rpq || [];
+        __mz_rpq.push(params);
+    })(window);
+</script>
+        </div>
+</body>
+</html>
