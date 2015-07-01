@@ -1,4 +1,4 @@
-angular.module('app').config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+angular.module('app').config(['$provide', '$stateProvider', '$urlRouterProvider', function ($provide, $stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider.state('app', {
@@ -24,6 +24,11 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function (
                     'assets/theme/' + AppConfig.theme + '/css/style.min.css'
                 ]);
             }],
+            status: ['$ocLazyLoad', '$injector', function ($ocLazyLoad, $injector) {
+                return $ocLazyLoad.load(['app/shared/status/status.service.js']).then(function () {
+                    return $injector.get('statusService').get();
+                });
+            }],
             nav: ['$ocLazyLoad', '$injector', function($ocLazyLoad, $injector){
                 return $ocLazyLoad.load('app/nav/nav.service.js').then(function(){
                    return $injector.get('navService').getNav();
@@ -37,17 +42,17 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function (
             }],
             load: ['$ocLazyLoad', 'AppConfig', function ($ocLazyLoad, AppConfig) {                
                 return $ocLazyLoad.load([
-                    'app/components/menu/menu.directive.js',
-                    'app/components/rc-beautifier/rc-beautifier.directive.js'
+                    'app/components/menu/menu.directive.js'                    
                 ]);
             }]
         },
-        controller: ['$rootScope', '$scope', '$state', 'nav', 'currentUser', function ($rootScope, $scope, $state, nav, currentUser) {
+        controller: ['$rootScope', '$scope', '$state', 'status', 'nav', 'currentUser', function ($rootScope, $scope, $state, status, nav, currentUser) {
 
             $scope.nav = nav;
 
             $rootScope.currentUser = currentUser;
-            
+
+            $provide.constant('Status', status);
 
             var navs = {};
             (function flatten(a, dest) {

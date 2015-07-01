@@ -6,7 +6,7 @@ angular.module('app.role').config(['$stateProvider', function ($stateProvider) {
         templateUrl: 'app/role/index.html',
         resolve: {
             load: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['app/role/role.controller.js', 'app/role/role.service.js']);
+                return $ocLazyLoad.load(['app/role/role.controller.js', 'app/role/role.service.js', 'app/shared/status/status.filter.js']);
             }]
         }
     });

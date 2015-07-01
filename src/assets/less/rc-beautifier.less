@@ -7,14 +7,15 @@ input[type="checkbox"].rc-beautifier {
 
 input[type="checkbox"].rc-beautifier + label {
 	display: inline-block;
+	position: absolute;
+	margin: 0 0 0 -12px;
+	font-size: @font-size-large;
 }
 
 input[type="checkbox"].rc-beautifier + label:after {
     position: absolute;
 	font-family: 'Glyphicons Halflings';
 	content: '\e157';
-	font-size: @font-size-large;
-	margin: -12px 0 0 -12px;
 	color: @brand-primary;
 }
 
@@ -22,6 +23,8 @@ input[type="checkbox"].rc-beautifier + label:after {
 input[type="checkbox"]:checked.rc-beautifier + label:after {
 	content: '\e067';
 }
+
+
 
 
 

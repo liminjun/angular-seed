@@ -24,7 +24,7 @@
                         <tbody ng-show="!isEmpty">
                             <tr ng-repeat="row in roleDataTable">
                                 <td>{{row.roleName}}</td>
-                                <td>{{row.status}}</td>
+                                <td>{{row.status | status}}</td>
                                 <td><a ng-click="openRoleModal(0, {roleId: row.roleId, roleName: row.roleName})"><span class="glyphicon glyphicon-pencil"></span></a></td>
                             </tr>
                         </tbody>

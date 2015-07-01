@@ -28,7 +28,7 @@
                                 <td><input type="checkbox" ng-model="row.selected" ng-click="vm.toggle()" rc-beautifier /></td>
                                 <td>{{row.userName}}</td>
                                 <td>{{row.fullName}}</td>
-                                <td>{{row.status}}</td>
+                                <td>{{row.status | status}}</td>
                                 <td><a ui-sref="app.user.edit({userId:row.userId})"><span class="glyphicon glyphicon-pencil"></span></a></td>
                             </tr>
                         </tbody>
