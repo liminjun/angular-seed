@@ -7,7 +7,7 @@ angular.module('app.directives').directive('unique', ['$q', '$http', '$timeout',
         link: function (scope, element, attrs, ctrl) {
 
             //ctrl.$asyncValidators.unique
-            var checkUrl = scope.$eval(attrs.unique).url;
+            var checkUrl = scope.$eval(attrs.unique).checkUrl;
             var checkProperty = scope.$eval(attrs.unique).checkProperty;
             
             

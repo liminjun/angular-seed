@@ -121,6 +121,6 @@ gulp.task('connect-dist', function() {
     });
 });
 
-gulp.task('default', ['connect-dev', 'watch']);
+gulp.task('default', ['watch', 'connect-dev']);
 
 gulp.task('publish', ['jshint', 'less', 'html', 'css', 'js', 'assets', 'api.test', 'connect-dist']);

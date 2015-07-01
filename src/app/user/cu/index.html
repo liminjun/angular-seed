@@ -7,7 +7,7 @@
                             <label class="col-sm-2 control-label"><span class="flag-require" ng-show="$state.is('app.user.add')">*</span>用户名（邮箱）</label>
                             <div class="col-sm-10" ng-if="$state.is('app.user.add')">
                                 <input type="email" name="userName" class="form-control" ng-model="vm.userName"
-                                       required email unique="{url:'api.test/user/check.json', checkProperty:'userName'}">
+                                       required email unique="{checkUrl:'api.test/user/check.json', checkProperty:'userName'}">
                                 <div ng-messages="form.userName.$error" ng-messages-include="app/shared/messages/user-name-error-messages.html" ng-show="form.userName.$touched" class="error"></div>
                                 <div ng-show="form.userName.$pending">检查中...</div>
                             </div>
