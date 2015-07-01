@@ -3,18 +3,20 @@ angular.module('app.directives').directive('unique', ['$q', '$http', '$timeout',
     return {
         restrict: 'A',
         require: 'ngModel',
+        scope: true,
         link: function (scope, element, attrs, ctrl) {
 
             //ctrl.$asyncValidators.unique
-            var checkUrl = attrs.uniqueCheckUrl;
-            var checkProperty = attrs.uniqueCheckProperty;
-
+            var checkUrl = scope.$eval(attrs.unique).url;
+            var checkProperty = scope.$eval(attrs.unique).checkProperty;
+            
+            
             ctrl.$asyncValidators.unique = function (modelValue, viewValue) {
-
+                
                 if (ctrl.$isEmpty(modelValue)) {
                     return $q.when();
-                }
-
+                }                
+                
                 var defer = $q.defer();
                 var params = {};
                 params[checkProperty] = modelValue;

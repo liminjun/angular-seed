@@ -110,16 +110,14 @@ gulp.task('watch', function () {
 gulp.task('connect-dev', function() {
     connect.server({
         root: 'src',
-        port: 8010,
-        livereload: true
+        port: 8010
     });
 });
 
 gulp.task('connect-dist', function() {
     connect.server({
         root: 'dist',
-        port: 8090,
-        livereload: true
+        port: 8090
     });
 });
 
