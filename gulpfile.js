@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 
+var connect = require('gulp-connect');
+
 var stream = require('event-stream');
  
 var concat = require('gulp-concat');
@@ -105,6 +107,22 @@ gulp.task('watch', function () {
     gulp.watch(path.less, ['less']);
 });
 
-gulp.task('default', ['html', 'css', 'js']);
+gulp.task('connect-dev', function() {
+    connect.server({
+        root: 'src',
+        port: 8010,
+        livereload: true
+    });
+});
 
-gulp.task('publish', ['jshint', 'less', 'html', 'css', 'js', 'assets', 'api.test']);
+gulp.task('connect-dist', function() {
+    connect.server({
+        root: 'dist',
+        port: 8090,
+        livereload: true
+    });
+});
+
+gulp.task('default', ['connect-dev', 'watch']);
+
+gulp.task('publish', ['jshint', 'less', 'html', 'css', 'js', 'assets', 'api.test', 'connect-dist']);
