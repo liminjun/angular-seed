@@ -24,9 +24,12 @@ angular.module('app').config(['$provide', '$stateProvider', '$urlRouterProvider'
                     'assets/theme/' + AppConfig.theme + '/css/style.min.css'
                 ]);
             }],
+            //enum
             status: ['$ocLazyLoad', '$injector', function ($ocLazyLoad, $injector) {
                 return $ocLazyLoad.load(['app/shared/status/status.service.js']).then(function () {
-                    return $injector.get('statusService').get();
+                    return $injector.get('statusService').get().then(function(data){
+                        return $provide.constant('Status', data);
+                    });
                 });
             }],
             nav: ['$ocLazyLoad', '$injector', function($ocLazyLoad, $injector){
@@ -46,13 +49,11 @@ angular.module('app').config(['$provide', '$stateProvider', '$urlRouterProvider'
                 ]);
             }]
         },
-        controller: ['$rootScope', '$scope', '$state', 'status', 'nav', 'currentUser', function ($rootScope, $scope, $state, status, nav, currentUser) {
+        controller: ['$rootScope', '$scope', '$state', 'nav', 'currentUser', function ($rootScope, $scope, $state, nav, currentUser) {
 
             $scope.nav = nav;
 
-            $rootScope.currentUser = currentUser;
-
-            $provide.constant('Status', status);
+            $rootScope.currentUser = currentUser;            
 
             var navs = {};
             (function flatten(a, dest) {
