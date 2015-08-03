@@ -11,5 +11,3 @@ angular.module('app.filters').filter('status', ['Status', function (Status) {
         return displayName;
     };
 }]);
-
-
