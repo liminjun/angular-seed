@@ -110,7 +110,7 @@ gulp.task('watch', function () {
 gulp.task('connect-dev', function() {
     connect.server({
         root: 'src',
-        port: 8010
+        port: 8080
     });
 });
 
